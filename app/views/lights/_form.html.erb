@@ -1,0 +1,12 @@
+<h2> Add a light </h2>
+
+<%= form_for @light do |f| %>
+
+  <div class="field">
+    IP: <%= f.text_field :ip_address %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

@@ -1,1 +1,5 @@
-test
+<% @lights.each do |ip| %>
+  <%= ip.ip_address %>
+<%end%>
+
+<%= render partial: 'lights/form', locals: { light: @light } %>

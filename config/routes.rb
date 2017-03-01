@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'magic_light#index', as: 'magicl_light'
+  root 'magic_light#index', as: 'magic_light'
+
+  resource :lights
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
