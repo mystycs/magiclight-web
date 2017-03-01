@@ -1,5 +1,5 @@
 <% @lights.each do |ip| %>
-  <%= ip.ip_address %>
+  <%= ip.ip_address %></br>
 <%end%>
 
 <%= render partial: 'lights/form', locals: { light: @light } %>

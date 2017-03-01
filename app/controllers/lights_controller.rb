@@ -2,6 +2,7 @@ class LightsController < ApplicationController
   def create
     @light = Light.new(light_params)
     if @light.save
+      flash[:notice] = 'Light added successfully'
       redirect_to magic_light_path
     else
       redirect_to magic_light_path
@@ -10,6 +11,9 @@ class LightsController < ApplicationController
 
   def index
     @lights = Light.all
+  end
+
+  def turnon
   end
 
   private

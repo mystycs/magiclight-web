@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>MagiclightWeb</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>MagiclightWeb</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+       <%= render 'layouts/header' %>
+      <div class="row">
+        <%= content_tag(:div, flash[:error], :class => "alert alert-warning") if flash[:error] %>
+        <%= content_tag(:div, flash[:notice], :class => "alert alert-success") if flash[:notice] %>
+        <%= content_tag(:div, flash[:alert], :class => "alert alert-danger") if flash[:alert] %>
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <div class="jumbotron"><%= yield %>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </body>
 </html>
