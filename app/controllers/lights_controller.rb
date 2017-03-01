@@ -4,7 +4,7 @@ class LightsController < ApplicationController
     if @light.save
       redirect_to magic_light_path
     else
-      render 'new'
+      redirect_to magic_light_path
     end
   end
 
