@@ -1,5 +1,4 @@
 class LightsController < ApplicationController
-
   def create
     @light = Light.new(light_params)
     if @light.save
@@ -34,10 +33,23 @@ class LightsController < ApplicationController
   end
 
   def turnoffall
-    @light = Light.find(params[:id])
-    @light.status = false
-    @light.save
-    @light.turnoff(@light.ip_address)
+    @light = Light.all
+    @light.each do |l|
+      l.status = false
+    #  l.save
+      l.turnoff(l.ip_address)
+    end
+    flash[:notice] = 'Light turned off'
+    redirect_to magic_light_path
+  end
+
+  def turnonall
+    @light = Light.all
+    @light.each do |l|
+      l.status = false
+      #l.save
+      l.turnon(l.ip_address)
+    end
     flash[:notice] = 'Light turned off'
     redirect_to magic_light_path
   end

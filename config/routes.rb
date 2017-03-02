@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   root 'magic_light#index', as: 'magic_light'
 
   # resource :lights
+  resource :lights do
+    collection do
+      get 'turnoffall'
+      get 'turnonall'
+    end
+  end
 
   resources :lights do
     member do
@@ -10,12 +16,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :lights do
-    member do
-      get :turnonall
-      get :turnoffall
-    end
-  end
+
+
+  # match "/lights/turnoffall" => "lights#turnoffall", :via => :get
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
