@@ -16,8 +16,6 @@ Rails.application.routes.draw do
     end
   end
 
-
-
   # match "/lights/turnoffall" => "lights#turnoffall", :via => :get
 
   # The priority is based upon order of creation: first created -> highest priority.
