@@ -36,7 +36,7 @@ class LightsController < ApplicationController
     @light = Light.all
     @light.each do |l|
       l.status = false
-      #  l.save
+       l.save
       l.turnoff(l.ip_address)
     end
     flash[:notice] = 'Light turned off'
@@ -46,8 +46,8 @@ class LightsController < ApplicationController
   def turnonall
     @light = Light.all
     @light.each do |l|
-      l.status = false
-      # l.save
+      l.status = true
+      l.save
       l.turnon(l.ip_address)
     end
     flash[:notice] = 'Light turned off'
