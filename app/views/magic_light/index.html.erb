@@ -1,4 +1,13 @@
-<% @lights.each do |ip| %>
-  <%= ip.ip_address %> - <%= link_to "Turn On", turnon_light_path(ip.id) %></br>
+<h2><%= link_to "Turn Off All", turnoffall_lights_path %></h2>
+
+
+<% @lights.each do |light| %>
+  <%= light.ip_address %> -
+    <% if light.status != true %>
+      <%= link_to "Turn On", turnon_light_path(light.id) %></br>
+    <% else %>
+      <%= link_to "Turn Off", turnoff_light_path(light.id) %></br>
+    <%end%>
 <%end%>
+
 <%= render partial: 'lights/form', locals: { light: @light } %>

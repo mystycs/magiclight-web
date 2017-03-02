@@ -21,4 +21,12 @@ class Light < ActiveRecord::Base
     s.write [0x71, 0x23, 0x0f, 0xa3].pack('C*')
     s.close
   end
+
+  def turnoff(ip)
+    host = ip
+    port = 5577
+    s = TCPSocket.new(host, port)
+    s.write [0x71, 0x24, 0x0f, 0xa4].pack('C*')
+    s.close
+  end
 end

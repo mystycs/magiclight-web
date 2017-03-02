@@ -1,5 +1,5 @@
-require 'socket'
 class LightsController < ApplicationController
+
   def create
     @light = Light.new(light_params)
     if @light.save
@@ -17,8 +17,28 @@ class LightsController < ApplicationController
 
   def turnon
     @light = Light.find(params[:id])
+    @light.status = true
+    @light.save
     @light.turnon(@light.ip_address)
     flash[:notice] = 'Light turned on'
+    redirect_to magic_light_path
+  end
+
+  def turnoff
+    @light = Light.find(params[:id])
+    @light.status = false
+    @light.save
+    @light.turnoff(@light.ip_address)
+    flash[:notice] = 'Light turned off'
+    redirect_to magic_light_path
+  end
+
+  def turnoffall
+    @light = Light.find(params[:id])
+    @light.status = false
+    @light.save
+    @light.turnoff(@light.ip_address)
+    flash[:notice] = 'Light turned off'
     redirect_to magic_light_path
   end
 
