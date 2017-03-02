@@ -39,7 +39,7 @@ class LightsController < ApplicationController
        l.save
       l.turnoff(l.ip_address)
     end
-    flash[:notice] = 'Light turned off'
+    flash[:notice] = 'All Lights turned off'
     redirect_to magic_light_path
   end
 
@@ -50,7 +50,7 @@ class LightsController < ApplicationController
       l.save
       l.turnon(l.ip_address)
     end
-    flash[:notice] = 'Light turned off'
+    flash[:notice] = 'All Lights turned on'
     redirect_to magic_light_path
   end
 

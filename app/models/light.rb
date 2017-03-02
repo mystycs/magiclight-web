@@ -29,4 +29,7 @@ class Light < ActiveRecord::Base
     s.write [0x71, 0x24, 0x0f, 0xa4].pack('C*')
     s.close
   end
+
+  # 31 + RGB COLOR CODE + 00F00F + CHECKSUM % 256
+
 end
