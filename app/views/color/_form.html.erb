@@ -1,5 +1,6 @@
-<h2> Change Color </h2>
-
+<h2>
+  Change Color
+</h2>
 
 <!-- <%= form_for @color do |f| %>
 
@@ -13,15 +14,15 @@
 
 <% end %> -->
 
-
-
 <!-- <%= simple_form_for @color do |f| %>
   <%= f.input :color, as: :minicolors %>
 <% end %> -->
 
+Current color: <%= @colors[0].color%>  <div class="box" style ="background: <%=@colors[0].color%>; float:left; margin-top: -2px"></div><br><br>
+
 <%# With Bootstrap theme and swatch on the right: %>
 <%= simple_form_for @color do |f| %>
-  <%= f.input :color, as: :minicolors, input_html: {data: {
-          minicolors: {theme: :bootstrap, position: :right}}}, value:555%>
-        <%=   f.submit %>
+<%= f.input :color, as: :minicolors, input_html: {data: {
+          minicolors: {theme: :bootstrap, position: :right}}}%>
+<%=   f.submit %>
 <% end %>

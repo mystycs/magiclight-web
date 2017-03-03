@@ -3,5 +3,6 @@ class MagicLightController < ApplicationController
     @light = Light.new
     @lights = Light.all
     @color = Color.new
+    @colors = Color.all
   end
 end
