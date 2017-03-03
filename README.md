@@ -1,6 +1,9 @@
 ## Magiclight-web
 
-A Ruby on Rails app to control your magiclights (https://www.amazon.com/MagicLight-WiFi-Smart-Light-Bulb/dp/B00SIDVZSW/ref=sr_1_1?ie=UTF8&qid=1488395913&sr=8-1&keywords=magiclight+wifi)
+A Ruby on Rails app to control your magiclights (http://a.co/hQlBTQg)
+
+Has the ability to turn on and off individually, as well as all together. 
+Also has the ability to change to any HEX RGB Color. ie: #00ff00 (green)
 
 ## Running Locally
 
