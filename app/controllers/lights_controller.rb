@@ -2,7 +2,7 @@ class LightsController < ApplicationController
   def create
     @light = Light.new(light_params)
     @light.save
-    @color = Color.new light_id: @light.id, color: "000000"
+    @color = Color.new light_id: @light.id, color: '000000'
     @color.save
     if @light.save
       flash[:notice] = 'Light added successfully'
@@ -39,7 +39,7 @@ class LightsController < ApplicationController
     @light = Light.all
     @light.each do |l|
       l.status = false
-       l.save
+      l.save
       l.turnoff(l.ip_address)
     end
     flash[:notice] = 'All Lights turned off'

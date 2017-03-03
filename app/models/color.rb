@@ -3,7 +3,6 @@ class Color < ActiveRecord::Base
 
   def self.changecolor(light_ip, color)
     host = light_ip
-    # raise color
     port = 5577
     colorstring = '31' + color.to_s[1..-1] + '00F00F'
     byteArray = [colorstring].pack 'H*'
