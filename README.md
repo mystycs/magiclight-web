@@ -23,7 +23,7 @@ The lights communicate by TCP packets over port 5577.
 To turn on it's '71230fa3'
 To turn off it's '71240fa4'
 
-To change a color its '31 + (HEX Color Code) + 00F00F + checksum(sum of all bytes % 256)'
+To change a color its `31 + (HEX Color Code) + 00F00F + checksum(sum of all bytes % 256)` ei: `3100FF0000F00F2E`
 
 ## Contribute
 
