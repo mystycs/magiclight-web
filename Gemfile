@@ -23,10 +23,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'ipaddress'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'simple_form'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'jquery-minicolors-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

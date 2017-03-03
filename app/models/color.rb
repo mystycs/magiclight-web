@@ -6,7 +6,8 @@ class Color < ActiveRecord::Base
     # raise color
     port = 5577
     s = TCPSocket.new(host, port)
-    colorstring = '31' + color.to_s + '00F00F'
+    color = color.to_s[1..-1]
+    colorstring = '31' + color + '00F00F'
     colorcode = [colorstring].pack 'H*'
     byteArray = colorcode.bytes
 
