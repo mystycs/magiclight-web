@@ -1,6 +1,6 @@
 ## Magiclight-web
 
-A Ruby on Rails app to control your magiclights (http://a.co/hQlBTQg)
+A Ruby on Rails app to control your magiclights (http://a.co/hQlBTQg) (Flux lights work too)
 
 Has the ability to turn on and off individually, as well as all together.
 Also has the ability to change to any HEX RGB Color. ie: #00ff00 (green)
