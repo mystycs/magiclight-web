@@ -22,7 +22,7 @@ class LightsController < ApplicationController
     @light.status = true
     @light.save
     @light.turnon(@light.ip_address)
-    flash[:notice] = 'Light turned on'
+    flash[:notice] = "Light (#{@light.ip_address}) turned on"
     redirect_to magic_light_path
   end
 
@@ -31,7 +31,7 @@ class LightsController < ApplicationController
     @light.status = false
     @light.save
     @light.turnoff(@light.ip_address)
-    flash[:notice] = 'Light turned off'
+    flash[:notice] = "Light (#{@light.ip_address}) turned off"
     redirect_to magic_light_path
   end
 
