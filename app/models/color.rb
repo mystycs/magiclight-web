@@ -21,4 +21,6 @@ class Color < ActiveRecord::Base
     s.write [colorstring].pack 'H*'
     s.close
   end
+  
+  #request color - 81 8a 8b 96
 end
