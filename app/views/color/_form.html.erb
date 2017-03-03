@@ -1,10 +1,11 @@
-<h2> Add a light </h2>
+<h2> Change Color </h2>
 
 
-<%= form_for @lights do |f| %>
+<%= form_for @color do |f| %>
+
 
   <div class="field">
-    IP: <%= f.text_field :ip_address %>
+    HEX: <%= f.text_field :color %>
   </div>
   <div class="actions">
     <%= f.submit %>

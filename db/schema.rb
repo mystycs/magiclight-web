@@ -11,11 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_170_302_064_533) do
-  create_table 'lights', force: :cascade do |t|
-    t.string   'ip_address'
-    t.datetime 'created_at',                 null: false
-    t.datetime 'updated_at',                 null: false
-    t.boolean  'status', default: false
+ActiveRecord::Schema.define(version: 20170302232629) do
+
+  create_table "colors", force: :cascade do |t|
+    t.string  "color"
+    t.integer "light_id"
   end
+
+  create_table "lights", force: :cascade do |t|
+    t.string   "ip_address"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "status",     default: false
+  end
+
 end

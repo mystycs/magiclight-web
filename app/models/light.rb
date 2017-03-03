@@ -3,6 +3,8 @@ require 'socket'
 class Light < ActiveRecord::Base
   #  validate :ipaddress?
 
+  has_one :light
+
   validates_presence_of :ip_address
   validates_uniqueness_of :ip_address
 

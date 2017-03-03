@@ -1,6 +1,9 @@
 class LightsController < ApplicationController
   def create
     @light = Light.new(light_params)
+    @light.save
+    @color = Color.new light_id: @light.id, color: "000000"
+    @color.save
     if @light.save
       flash[:notice] = 'Light added successfully'
       redirect_to magic_light_path
