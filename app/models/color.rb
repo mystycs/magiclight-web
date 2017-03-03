@@ -1,6 +1,9 @@
 class Color < ActiveRecord::Base
   belongs_to :light
 
+  validates_format_of :color, with: /\A#?(?:[A-F0-9]{3}){1,2}\z/i
+  validates_presence_of :color
+
   def self.changecolor(light_ip, color)
     host = light_ip
     port = 5577
