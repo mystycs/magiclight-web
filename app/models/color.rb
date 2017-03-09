@@ -33,10 +33,9 @@ class Color < ActiveRecord::Base
     s.write ["818a8b96"].pack('H*')
     color = s.read(14).unpack('H*').to_s[14...22]
 
-
     s.close
 
-    if color == "000000ff" #so warm white shows as white, otherwise shows as black
+    if color == "000000ff" #so warm white shows as white, due to issue it shows as black
       color = "FFFFFF"
       return color
     else
