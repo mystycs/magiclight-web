@@ -14,7 +14,7 @@ class Light < ActiveRecord::Base
     host = ip
     port = 5577
     s = TCPSocket.new(host, port)
-    s.write [0x71, 0x23, 0x0f, 0xa3].pack('C*')
+    s.write ["71230fa3"].pack('H*')
     s.close
   end
 
@@ -22,7 +22,7 @@ class Light < ActiveRecord::Base
     host = ip
     port = 5577
     s = TCPSocket.new(host, port)
-    s.write [0x71, 0x24, 0x0f, 0xa4].pack('C*')
+    s.write ["71240fa4"].pack('H*')
     s.close
   end
 end

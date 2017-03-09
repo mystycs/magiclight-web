@@ -20,7 +20,7 @@ class Color < ActiveRecord::Base
     colorstring += (sumOfValues % (2**(byteArray.length + 1))).to_s(16)
 
     s = TCPSocket.new(host, port)
-    s.write [colorstring].pack 'H*'
+    s.write [colorstring].pack('H*')
     s.close
   end
 
@@ -31,12 +31,17 @@ class Color < ActiveRecord::Base
     s = TCPSocket.new(host, port)
 
     s.write ["818a8b96"].pack('H*')
-    color = s.read(14).unpack('H*').to_s[14...20]
+    color = s.read(14).unpack('H*').to_s[14...22]
+
 
     s.close
 
-    return color
-
+    if color == "000000ff" #so warm white shows as white, otherwise shows as black
+      color = "FFFFFF"
+      return color
+    else
+      return color[0...6]
+    end
 
   end
 end
