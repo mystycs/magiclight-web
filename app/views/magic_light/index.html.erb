@@ -3,12 +3,12 @@
 
 
 
-<% @lights.each do |light| %>
+<% @lights.each_with_index do |light, index| %>
   <%= light.ip_address %> -
     <% if light.status != true %>
-      <%= link_to "Turn On", turnon_light_path(light.id) %></br>
+      <%= link_to "Turn On", turnon_light_path(light.id) %> <div class="box" style ="background: #<%=@colors[index]%>; float:left; margin-top: -2px; margin-bottom: 10px"></div></br></br>
     <% else %>
-      <%= link_to "Turn Off", turnoff_light_path(light.id) %></br>
+      <%= link_to "Turn Off", turnoff_light_path(light.id) %> <div class="box" style ="background: #<%=@colors[index]%>; float:left; margin-top: -2px; margin-bottom: 10px"></div></br></br>
     <%end%>
 <%end%>
 

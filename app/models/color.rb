@@ -1,3 +1,5 @@
+require 'socket'
+
 class Color < ActiveRecord::Base
   belongs_to :light
 
@@ -20,5 +22,21 @@ class Color < ActiveRecord::Base
     s = TCPSocket.new(host, port)
     s.write [colorstring].pack 'H*'
     s.close
+  end
+
+  def self.getcolor(light_ip)
+    host = light_ip
+    port = 5577
+
+    s = TCPSocket.new(host, port)
+
+    s.write ["818a8b96"].pack('H*')
+    color = s.read(14).unpack('H*').to_s[14...20]
+
+    s.close
+
+    return color
+
+
   end
 end
