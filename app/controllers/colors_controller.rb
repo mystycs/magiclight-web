@@ -11,6 +11,18 @@ class ColorsController < ApplicationController
     redirect_to magic_light_path
   end
 
+  def warmwhite
+    @color = Color.all
+
+    #@color.update_all(:color => "#000000ff")
+    @light = Light.all
+    @light.each do |l|
+      @color.changecolor(l.ip_address, "#000000FF")
+    end
+    flash[:notice] = "Color changed to warm white(#000000FF)."
+    redirect_to magic_light_path
+  end
+
   private
 
   def color_params

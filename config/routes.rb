@@ -16,7 +16,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :colors
+  #resources :colors
+
+  resources :colors do
+    collection do
+      get 'warmwhite'
+    end
+  end
 
   # match "/lights/turnoffall" => "lights#turnoffall", :via => :get
 

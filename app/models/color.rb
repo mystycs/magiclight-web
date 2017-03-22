@@ -9,7 +9,11 @@ class Color < ActiveRecord::Base
   def self.changecolor(light_ip, color)
     host = light_ip
     port = 5577
-    colorstring = '31' + color.to_s[1..-1] + '00F00F'
+    if color == "#000000FF" #warmwhite
+      colorstring = '31' + color.to_s[1..-1] + '0F0F' #warmwhite magic code
+    else
+      colorstring = '31' + color.to_s[1..-1] + '00F00F'
+    end
     byteArray = [colorstring].pack 'H*'
 
     sumOfValues = 0

@@ -21,7 +21,12 @@
 <!-- Current color: <%= @colors[0]%>  <div class="box" style ="background: <%=@colors[0]%>; float:left; margin-top: -2px"></div><br><br> -->
 
 <%# With Bootstrap theme and swatch on the right: %>
+
+<%= link_to "Warm White", warmwhite_colors_path%> </br>
+
 <%= simple_form_for @color do |f| %>
+
+
 <%= f.input :color, as: :minicolors, input_html: {data: {
           minicolors: {theme: :bootstrap, position: :right}}}%>
 <%=   f.submit %>
