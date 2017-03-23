@@ -35,7 +35,7 @@ class Color < ActiveRecord::Base
     s = TCPSocket.new(host, port)
 
     s.write ["818a8b96"].pack('H*')
-    color = s.read(14).unpack('H*').to_s[14...22]
+    color = s.read(14).unpack('H*').to_s[14...22] #read extra two to tell if its warm white 
 
     s.close
 
