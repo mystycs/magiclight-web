@@ -2,7 +2,7 @@ class ColorsController < ApplicationController
   def create
     @color = Color.all
 
-    @color.update_all(params[:color])
+    #@color.update_all(params[:color])
     @light = Light.all
     @light.each do |l|
       @color.changecolor(l.ip_address, params[:color][:color])
